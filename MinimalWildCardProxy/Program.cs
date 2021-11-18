@@ -20,7 +20,7 @@ app.MapGet("/{*s}", (string s, HttpRequest r) =>
     // Proxy the request with above information through your desired interface, like HttpClient or grpc.
     // Return the result from that service below.
 
-    return $"Request path+query: {path}{queryString}";
+    return $"I can proxy this request to path+query: {path}{queryString}";
 });
 
 app.MapPost("/{*s}", async (string s, HttpRequest r) =>
@@ -37,7 +37,7 @@ app.MapPost("/{*s}", async (string s, HttpRequest r) =>
     // Proxy the request with above information through your desired interface, like HttpClient or grpc.
     // Return the result from that service below.
 
-    return $"Request path+query: {path}{queryString} - Body: {body}";
+    return $"I can proxy this request to: {path}{queryString} with body: {body}";
 });
 
 app.Run();
